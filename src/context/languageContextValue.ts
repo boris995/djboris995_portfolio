@@ -1,0 +1,11 @@
+import { createContext } from "react"
+
+export type Language = "en" | "de" | "sr" | "bs"
+
+export interface LanguageContextType {
+  language: Language
+  setLanguage: (language: Language) => void
+}
+
+export const LanguageContext =
+  createContext<LanguageContextType | null>(null)

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 import PageContainer from "../components/layout/PageContainer"
 import HeroSwiper from "../components/home/HeroSwiper"
@@ -52,19 +53,19 @@ export default function HomePage() {
             transition={{ duration: 1.1 }}
             className="mt-10 flex flex-wrap justify-center gap-4"
           >
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="rounded-2xl bg-blue-500 px-8 py-4 font-semibold text-white transition hover:bg-blue-400"
             >
               {t.common.viewProjects}
-            </a>
+            </Link>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="rounded-2xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10"
             >
               {t.common.contactMe}
-            </a>
+            </Link>
           </motion.div>
         </div>
 
@@ -122,17 +123,16 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-semibold text-white transition hover:bg-white/10"
           >
             {t.common.seeAllProjects}
-          </a>
+          </Link>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {projects.slice(0, 3).map((project, index) => (
-            t.projectContent[project.slug] &&
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 24 }}

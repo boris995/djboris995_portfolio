@@ -13,6 +13,8 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const { t } = useLanguage()
   const content = t.projectContent[project.slug]
+  const liveButtonClass =
+    "flex items-center gap-2 rounded-2xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-400"
 
   return (
     <motion.article
@@ -73,15 +75,22 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {t.common.code}
           </a>
 
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 rounded-2xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-400"
-          >
-            <FiExternalLink />
-            {t.common.live}
-          </a>
+          {project.liveUrl.startsWith("/") ? (
+            <Link to={project.liveUrl} className={liveButtonClass}>
+              <FiExternalLink />
+              {t.common.live}
+            </Link>
+          ) : (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={liveButtonClass}
+            >
+              <FiExternalLink />
+              {t.common.live}
+            </a>
+          )}
         </div>
       </div>
     </motion.article>

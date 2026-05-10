@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 import PageContainer from "../components/layout/PageContainer"
 import SectionHeader from "../components/sections/SectionHeader"
@@ -73,9 +74,12 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              <button className="mt-10 w-full rounded-2xl bg-blue-500 px-6 py-4 font-semibold text-white transition hover:bg-blue-400">
+              <Link
+                to="/contact"
+                className="mt-10 block w-full rounded-2xl bg-blue-500 px-6 py-4 text-center font-semibold text-white transition hover:bg-blue-400"
+              >
                 {t.common.startProject}
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -3,11 +3,13 @@ import type { Language } from "../context/languageContextValue"
 export const languageOptions: Array<{
   code: Language
   label: string
+  name: string
+  flag: string
 }> = [
-  { code: "en", label: "EN" },
-  { code: "de", label: "DE" },
-  { code: "sr", label: "SR" },
-  { code: "bs", label: "BS" },
+  { code: "en", label: "EN", name: "English", flag: "/flags/gb.svg" },
+  { code: "de", label: "DE", name: "Deutsch", flag: "/flags/de.svg" },
+  { code: "sr", label: "SR", name: "Srpski", flag: "/flags/rs.svg" },
+  { code: "bs", label: "BS", name: "Bosanski", flag: "/flags/ba.svg" },
 ]
 
 const en = {

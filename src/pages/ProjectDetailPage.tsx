@@ -11,6 +11,8 @@ export default function ProjectDetailPage() {
   const { slug } = useParams()
   const project = projects.find((item) => item.slug === slug)
   const content = project ? t.projectContent[project.slug] : null
+  const liveButtonClass =
+    "inline-flex items-center gap-2 rounded-2xl bg-blue-500 px-6 py-4 font-semibold text-white transition hover:bg-blue-400"
 
   if (!project || !content) {
     return (
@@ -94,15 +96,22 @@ export default function ProjectDetailPage() {
                 {t.common.viewCode}
               </a>
 
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-blue-500 px-6 py-4 font-semibold text-white transition hover:bg-blue-400"
-              >
-                <FiExternalLink />
-                {t.common.livePreview}
-              </a>
+              {project.liveUrl.startsWith("/") ? (
+                <Link to={project.liveUrl} className={liveButtonClass}>
+                  <FiExternalLink />
+                  {t.common.livePreview}
+                </Link>
+              ) : (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={liveButtonClass}
+                >
+                  <FiExternalLink />
+                  {t.common.livePreview}
+                </a>
+              )}
             </div>
           </div>
 

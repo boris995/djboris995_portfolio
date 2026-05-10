@@ -13,7 +13,7 @@ export const projects: Project[] = [
     category: "Fullstack",
     technologies: ["React", "TypeScript", "Node.js", "MySQL"],
     githubUrl: "https://github.com/boris995",
-    liveUrl: "#",
+    liveUrl: "/projects/portfolio-platform",
     featured: true,
     results: [
       "Reusable page structure for a professional personal brand.",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     category: "Fullstack",
     technologies: ["React", "Express", "Sequelize", "MySQL"],
     githubUrl: "https://github.com/boris995",
-    liveUrl: "#",
+    liveUrl: "/projects/reservation-system",
     featured: true,
     results: [
       "Service, employee and reservation logic prepared for real businesses.",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     category: "Frontend",
     technologies: ["React", "API", "Charts", "Tailwind"],
     githubUrl: "https://github.com/boris995",
-    liveUrl: "#",
+    liveUrl: "/projects/crypto-market-app",
     featured: false,
     results: [
       "Mobile-first market overview for quick scanning.",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     category: "Backend",
     technologies: ["Node.js", "Express", "MySQL", "Sequelize"],
     githubUrl: "https://github.com/boris995",
-    liveUrl: "#",
+    liveUrl: "/projects/tournament-manager",
     featured: false,
     results: [
       "Backend model for teams, rounds and progression.",
